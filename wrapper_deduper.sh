@@ -13,6 +13,6 @@
 
 conda activate bgmp_py39
 
-/usr/bin/time -v python3 ./elphick_deduper.py -f sorted_C1_SE_uniqAlign.sam \
+/usr/bin/time -v python3 ./elphick_deduper.py -f sorted_C1_SE_uniqAlign.sam -o deduped_sorted_C1_SE_uniqAlign.sam \
 -u STL96.txt
 
