@@ -6,14 +6,14 @@ import re
 
 parser = argparse.ArgumentParser(description="Script to deduplicate reads in a SAM file")
 parser.add_argument("-f", "--sam_filename", help="path to input sam file", required=True)
-parser.add_argument("-o", "--output_filename", help="path to input sam file", required=True)
 parser.add_argument("-u", "--umi_filename", help=" file containing the list of UMIs")
 parser.add_argument("-p", "--paired", help="set flag if input file is paired-end", action='store_true')
 args = parser.parse_args()
 
 sam_filename=str(args.sam_filename)
 umi_filename=str(args.umi_filename)
-out_filename=str(args.output_filename)
+# Create output file name
+out_filename=sam_filename.split(".")[0] +"_deduped.sam"
 
 if args.paired is True:
     raise ValueError('Error: Paired functionality not available yet')
